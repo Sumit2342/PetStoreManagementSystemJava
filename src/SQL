@@ -1,0 +1,17 @@
+// Creating Table
+CREATE TABLE pets (
+    pet_id NUMBER  PRIMARY KEY,
+    pet_category VARCHAR2(50),
+    pet_type VARCHAR2(50),
+    color VARCHAR2(50),
+    age NUMBER,
+    price NUMBER,
+    is_vaccinated NUMBER(1),
+    food_habits VARCHAR2(100)
+);
+
+
+// Creating Sequence for auto increment of primary key
+
+create sequence petid_seq
+start with 1 increment by 1;
