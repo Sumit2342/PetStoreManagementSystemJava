@@ -47,6 +47,7 @@ public class Main {
 	                    System.out.print("Food Habits: ");
 	                    String foodHabits = scanner.nextLine();
 	                    
+	                    
 	                    Pet pet = new Pet(petCategory,petType,color,age,price,isVaccinated,foodHabits);
 	                	
 	                	service.addPets(pet);
@@ -105,6 +106,7 @@ public class Main {
 	                    break;
 	            }
 	        } while (choice != 8);
+			scanner.close();
 		}
 		catch(Exception e) {
 			throw new RuntimeException("Something went wrong "+e);

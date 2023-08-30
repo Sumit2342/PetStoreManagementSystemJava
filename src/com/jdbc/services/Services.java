@@ -37,10 +37,13 @@ public class Services {
 	}/// End of addPets()
 	
 	public void getAllPets() throws SQLException {
+		
 		try (Connection connection = databaseService.getConnection();
 			Statement statement = 	connection.createStatement();
 				ResultSet resultSet = statement.executeQuery(QueryUtil.selectAllPetQuery())){
+			
 			while(resultSet.next()) {
+				count++;
 				printPet(new Pet(resultSet.getInt("petid"),
 						resultSet.getString("petcategory"),
 						resultSet.getString("pettype"),
@@ -50,6 +53,7 @@ public class Services {
 						resultSet.getBoolean("isvaccinated"),
 						resultSet.getString("foodhabits")));
 			}
+			
 			
 		}
 	}///End of getAllPets()
