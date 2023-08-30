@@ -37,7 +37,7 @@ public class Services {
 	}/// End of addPets()
 	
 	public void getAllPets() throws SQLException {
-		
+		int count = 0;
 		try (Connection connection = databaseService.getConnection();
 			Statement statement = 	connection.createStatement();
 				ResultSet resultSet = statement.executeQuery(QueryUtil.selectAllPetQuery())){
